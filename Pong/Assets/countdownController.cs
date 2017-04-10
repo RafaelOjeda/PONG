@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Countdown_Controller : MonoBehaviour {
+public class countdownController : MonoBehaviour {
 
 	public Text CountdownText;
 	public int Countdown; 

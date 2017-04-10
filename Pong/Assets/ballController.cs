@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball_Controller : MonoBehaviour {
 
+public class ballController : MonoBehaviour {
 	Rigidbody rb;
-
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
-
 		//Pause ball logic for 2.5 seconds
 		StartCoroutine (Pause ());
 	}
@@ -20,7 +18,6 @@ public class Ball_Controller : MonoBehaviour {
 	}
 
 	IEnumerator Pause () {
-
 		transform.position = Vector3.zero;
 
 		// Wait for 2.5 seconds
@@ -38,7 +35,7 @@ public class Ball_Controller : MonoBehaviour {
 			StartCoroutine( Pause());
 
 			// Give player 2 one point
-			Scoreboard_Controller.instance.GivePlayerTwoAPoint ();
+			scoreboardController.instance.GivePlayerTwoAPoint ();
 
 		} else if (transform.position.x > 13f) {
 			
@@ -48,12 +45,12 @@ public class Ball_Controller : MonoBehaviour {
 			StartCoroutine( Pause());
 
 			// Give player 1 one point
-			Scoreboard_Controller.instance.GivePlayerOneAPoint();
+			scoreboardController.instance.GivePlayerOneAPoint();
 		}
 	}
 
 	void LaunchBall () {
-
+		
 		// Resets position to center
 		transform.position = Vector3.zero;
 

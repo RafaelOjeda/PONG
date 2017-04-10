@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Scoreboard_Controller : MonoBehaviour {
+public class scoreboardController : MonoBehaviour {
 
-	public static Scoreboard_Controller instance;
+	public static scoreboardController instance;
 
 	public Text PlayerOneScoreText;
 	public Text PlayerTwoScoreText;

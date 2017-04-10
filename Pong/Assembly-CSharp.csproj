@@ -46,11 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Ball_Controller.cs" />
-     <Compile Include="Assets\Countdown_Controller.cs" />
-     <Compile Include="Assets\Menu_Controller.cs" />
-     <Compile Include="Assets\Player_Input_Controller.cs" />
-     <Compile Include="Assets\Scoreboard_Controller.cs" />
+     <Compile Include="Assets\ballController.cs" />
+     <Compile Include="Assets\ballParticles.cs" />
+     <Compile Include="Assets\countdownController.cs" />
+     <Compile Include="Assets\menuController.cs" />
+     <Compile Include="Assets\playerInputController.cs" />
+     <Compile Include="Assets\scoreboardController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity3d/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
