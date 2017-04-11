@@ -4,7 +4,9 @@ using UnityEngine;
 
 
 public class ballController : MonoBehaviour {
+	public ParticleSystem ps;
 	Rigidbody rb;
+
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
@@ -93,12 +95,12 @@ public class ballController : MonoBehaviour {
 		//Assign velocity based off of where we launch ball
 		rb.velocity = launchDirection;
 	}
-
 	// When collide with an object...
 	void OnCollisionEnter (Collision hit) {
 		//If it was the top or bottom of the screen...
+		ps.Emit(10);
+		StartCoroutine (stopParticles ());
 		if (hit.gameObject.name == "TopBounds") {
-
 			float speedInXDirection = 0f;
 
 			if (rb.velocity.x > 0f)
@@ -124,7 +126,6 @@ public class ballController : MonoBehaviour {
 		}
 
 		if (hit.gameObject.name == "Left_Bat") {
-
 			rb.velocity = new Vector3 (13f, 0f, 0f);
 
 
@@ -155,5 +156,10 @@ public class ballController : MonoBehaviour {
 				rb.velocity = new Vector3 (-8f, 8f, 0f);
 			}
 		}
+	}
+	IEnumerator stopParticles() {
+		yield return new WaitForSeconds (2f);
+		ParticleSystem.EmissionModule em = ps.emission;
+		em.enabled = false;
 	}
 }

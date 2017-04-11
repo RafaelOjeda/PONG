@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ballController.cs" />
-     <Compile Include="Assets\ballParticles.cs" />
      <Compile Include="Assets\countdownController.cs" />
      <Compile Include="Assets\menuController.cs" />
      <Compile Include="Assets\playerInputController.cs" />
