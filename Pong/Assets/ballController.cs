@@ -6,6 +6,7 @@ using UnityEngine;
 public class ballController : MonoBehaviour {
 	public ParticleSystem ps;
 	Rigidbody rb;
+	public  float ballSpeed;
 
 	// Use this for initialization
 	void Start () {
@@ -95,8 +96,13 @@ public class ballController : MonoBehaviour {
 		//Assign velocity based off of where we launch ball
 		rb.velocity = launchDirection;
 	}
+
 	// When collide with an object...
-	void OnCollisionEnter (Collision hit) {
+	void OnCollisionEnter (Collision hit) { 
+		ballSpeed = 8f;
+		float ballSpeedIncrement = Random.Range (0.1f, 0.5f);
+
+
 		//If it was the top or bottom of the screen...
 		ps.Emit(10);
 		StartCoroutine (stopParticles ());
@@ -104,7 +110,7 @@ public class ballController : MonoBehaviour {
 			float speedInXDirection = 0f;
 
 			if (rb.velocity.x > 0f)
-				speedInXDirection = 8f;
+				speedInXDirection = ballSpeed + ballSpeedIncrement;
 
 			if (rb.velocity.x < 0f)
 				speedInXDirection = -8f;
@@ -127,7 +133,6 @@ public class ballController : MonoBehaviour {
 
 		if (hit.gameObject.name == "Left_Bat") {
 			rb.velocity = new Vector3 (13f, 0f, 0f);
-
 
 			//Check if we hit lower half of the bat...
 			if (transform.position.y - hit.gameObject.transform.position.y < -.75) {

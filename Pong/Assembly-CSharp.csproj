@@ -47,10 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\ballController.cs" />
+     <Compile Include="Assets\ballParticles.cs" />
      <Compile Include="Assets\countdownController.cs" />
      <Compile Include="Assets\menuController.cs" />
      <Compile Include="Assets\playerInputController.cs" />
      <Compile Include="Assets\scoreboardController.cs" />
+     <Compile Include="Assets\startCountdown.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity3d/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
